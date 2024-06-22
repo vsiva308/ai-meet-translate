@@ -1,0 +1,22 @@
+{
+    "manifest_version": 3,
+    "name": "Meet Audio Transcription",
+    "version": "1.0",
+    "permissions": [
+        "tabs",
+        "activeTab",
+        "storage",
+        "background",
+        "scripting"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+        "matches": ["*://meet.google.com/*"],
+        "js": ["content_script.js"]
+        }
+    ]
+}
+  
