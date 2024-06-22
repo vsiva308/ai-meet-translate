@@ -8,14 +8,14 @@ if (!('webkitSpeechRecognition' in window)) {
     window.recognition.onresult = function(event) {
         var interim_transcript = '';
         for (var i = event.resultIndex; i < event.results.length; ++i) {
-        if (event.results[i].isFinal) {
-            console.log('Final transcript:', event.results[i][0].transcript);
-        } else {
-            interim_transcript += event.results[i][0].transcript;
-        }
+            if (event.results[i].isFinal) {
+                console.log('Final transcript:', event.results[i][0].transcript);
+            } else {
+                interim_transcript += event.results[i][0].transcript;
+            }
         }
         if (interim_transcript) {
-        console.log('Interim transcript:', interim_transcript);
+            console.log('Interim transcript:', interim_transcript);
         }
     };
 
