@@ -9,14 +9,16 @@
         "background",
         "scripting"
     ],
+    "action": {
+        "default_popup": "popup.html"
+    },
     "background": {
         "service_worker": "background.js"
     },
     "content_scripts": [
         {
-        "matches": ["*://meet.google.com/*"],
-        "js": ["content_script.js"]
+            "matches": ["*://meet.google.com/*"],
+            "js": ["content_script.js"]
         }
     ]
 }
-  
