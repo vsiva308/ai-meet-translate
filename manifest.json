@@ -1,6 +1,6 @@
 {
     "manifest_version": 3,
-    "name": "Meet Audio Transcription",
+    "name": "Audio Injector",
     "version": "1.0",
     "permissions": [
         "tabs",
@@ -10,13 +10,16 @@
         "scripting"
     ],
     "background": {
-        "service_worker": "background.js"
+      "service_worker": "background.js"
     },
     "content_scripts": [
         {
         "matches": ["*://meet.google.com/*"],
         "js": ["content_script.js"]
         }
-    ]
-}
+    ],
+    "action": {
+      "default_popup": "popup.html"
+    }
+  }
   
