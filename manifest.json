@@ -1,24 +1,14 @@
 {
-    "manifest_version": 3,
-    "name": "Meet Audio Transcription",
+    "manifest_version": 2,
+    "name": "Audio Capture Extension",
     "version": "1.0",
-    "permissions": [
-        "tabs",
-        "activeTab",
-        "storage",
-        "background",
-        "scripting"
-    ],
-    "action": {
-        "default_popup": "popup.html"
-    },
+    "permissions": ["tabCapture"],
     "background": {
-        "service_worker": "background.js"
+      "scripts": ["background.js"],
+      "persistent": false
     },
-    "content_scripts": [
-        {
-            "matches": ["*://meet.google.com/*"],
-            "js": ["content_script.js"]
-        }
-    ]
-}
+    "browser_action": {
+      "default_popup": "popup.html"
+    }
+  }
+  
