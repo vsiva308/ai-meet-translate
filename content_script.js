@@ -24,9 +24,6 @@ const injectAudioIntoMeet = async (audioContext, generatedStream) => {
     // Create a new MediaStream to combine user media and generated audio
     const combinedStream = new MediaStream();
 
-    // // Add the video tracks to the combined stream
-    // userMediaStream.getVideoTracks().forEach(track => combinedStream.addTrack(track));
-
     // Mute the user's audio tracks
     userMediaStream.getAudioTracks().forEach(track => track.stop());
 
