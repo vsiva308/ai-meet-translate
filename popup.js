@@ -7,9 +7,9 @@ document.getElementById('toggle-btn').addEventListener('click', function() {
         }, (results) => {
             // Update the button text based on the current state returned from the content script
             if (results[0].result) {
-                button.textContent = 'Mute';
+                button.textContent = 'Stop';
             } else {
-                button.textContent = 'Start Transcription';
+                button.textContent = 'Start';
             }
         });
     });
