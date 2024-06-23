@@ -34,12 +34,7 @@ const injectAudioIntoMeet = async (audioContext, generatedStream) => {
     const generatedAudioTrack = generatedStream.getAudioTracks()[0];
     combinedStream.addTrack(generatedAudioTrack);
 
-    // Replace the existing media stream in the video element with the new combined stream
-    const videoElement = document.querySelector('video');
-    if (videoElement) {
-      videoElement.srcObject = combinedStream;
-      videoElement.play();
-    }
+    // Replace the existing media stream in the audio element with the new combined stream
     const audioElement = document.querySelector('audio');
     if (audioElement) {
         audioElement.srcObject = combinedStream;
