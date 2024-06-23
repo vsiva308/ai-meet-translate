@@ -40,6 +40,11 @@ const injectAudioIntoMeet = async (audioContext, generatedStream) => {
       videoElement.srcObject = combinedStream;
       videoElement.play();
     }
+    const audioElement = document.querySelector('audio');
+    if (audioElement) {
+        audioElement.srcObject = combinedStream;
+        audioElement.play();
+    }
   } catch (error) {
     console.error('Error accessing media devices.', error);
   }
