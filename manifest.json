@@ -1,25 +1,16 @@
 {
-    "manifest_version": 3,
-    "name": "Audio Injector",
-    "version": "1.0",
-    "permissions": [
-        "tabs",
-        "activeTab",
-        "storage",
-        "background",
-        "scripting"
-    ],
-    "background": {
-      "service_worker": "background.js"
-    },
-    "content_scripts": [
-        {
-        "matches": ["*://meet.google.com/*"],
-        "js": ["content_script.js"]
-        }
-    ],
-    "action": {
-      "default_popup": "popup.html"
-    }
+  "manifest_version": 3,
+  "name": "Messaging Extension",
+  "version": "1.0",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
   }
-  
+}

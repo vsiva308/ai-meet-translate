@@ -1,20 +1,28 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Audio Injector</title>
-    <style>
-      body {
-        width: 200px;
-        height: 100px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-      }
-    </style>
-  </head>
-  <body>
-    <button id="injectButton">Inject Audio</button>
-    <script src="popup.js"></script>
-  </body>
+<head>
+  <title>Messaging Extension</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      width: 300px;
+    }
+    #messages {
+      height: 200px;
+      overflow-y: scroll;
+      border: 1px solid #ccc;
+      margin-bottom: 10px;
+      padding: 10px;
+    }
+    #message {
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div id="messages"></div>
+  <input type="text" id="message" placeholder="Type a message" />
+  <button id="send">Send</button>
+  <script src="popup.js"></script>
+</body>
 </html>
