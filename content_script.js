@@ -19,13 +19,13 @@ const generateBeep = (audioContext) => {
 const injectAudioIntoMeet = async (audioContext, generatedStream) => {
   try {
     // Request access to the user's media devices
-    const userMediaStream = await navigator.mediaDevices.getUserMedia({ audio: true, video: true });
+    const userMediaStream = await navigator.mediaDevices.getUserMedia({ audio: true, video: false });
 
     // Create a new MediaStream to combine user media and generated audio
     const combinedStream = new MediaStream();
 
-    // Add the video tracks to the combined stream
-    userMediaStream.getVideoTracks().forEach(track => combinedStream.addTrack(track));
+    // // Add the video tracks to the combined stream
+    // userMediaStream.getVideoTracks().forEach(track => combinedStream.addTrack(track));
 
     // Mute the user's audio tracks
     userMediaStream.getAudioTracks().forEach(track => track.stop());
