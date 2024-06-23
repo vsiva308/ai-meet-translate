@@ -15,6 +15,20 @@ document.getElementById('toggle-btn').addEventListener('click', function() {
     });
 });
 
+document.getElementById('set-lang-btn').addEventListener('click', function() {
+    const targetLang = document.getElementById('targetLang').value;
+    chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+        console.log('Sending message to set language...');
+        chrome.tabs.sendMessage(tabs[0].id, { type: 'setTargetLang', targetLang: targetLang }, function(response) {
+            if (response && response.status === 'success') {
+                console.log('Target language set to:', response.targetLang);
+            } else {
+                console.error('Failed to set target language');
+            }
+        });
+    });
+});
+
 function toggleTranscription() {
     const recognitionRunning = window.recognition && window.recognitionRunning;
     if (recognitionRunning) {

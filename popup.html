@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Control Transcription</title>
     <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
         button {
             width: 100%;
             padding: 10px;
@@ -15,6 +19,16 @@
 </head>
 <body>
     <button id="toggle-btn">Start</button>
+
+    <h1>Set Target Language</h1>
+    <label for="targetLang">I want to hear:</label>
+    <select id="targetLang">
+        <option value="es">Spanish</option>
+        <option value="fr">French</option>
+        <option value="de">German</option>
+    </select>
+    <button id="set-lang-btn">Set Language</button>
+
     <script src="popup.js"></script>
 </body>
 </html>
